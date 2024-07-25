@@ -8,12 +8,12 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./data.dump:/docker-entrypoint-initdb.d/data.sql
+      - ./example.sql:/docker-entrypoint-initdb.d/data.sql
 
   pgadmin:
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: a@a.com
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: admin
       PGADMIN_CONFIG_ENHANCED_SECURITY: 'False'
       PGADMIN_CONFIG_WTF_CSRF_ENABLED: 'False'
