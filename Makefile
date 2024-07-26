@@ -10,3 +10,15 @@ wipe:
 
 reset:
 	docker system prune -a -f && docker volume prune -f
+
+dblogs:
+	docker compose logs db
+
+pgalogs:
+	docker compose logs pgadmin
+
+dblogsf:
+	docker compose logs db -f
+
+pgalogsf:
+	docker compose logs pgadmin -f
