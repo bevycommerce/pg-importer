@@ -10,7 +10,7 @@ services:
     # ports:
     #   - "5432:5432"
     volumes:
-      - ./example.sql:/docker-entrypoint-initdb.d/data.sql
+      - ./data.dump:/docker-entrypoint-initdb.d/data.sql
       - postgres_data:/var/lib/postgresql/data
 
   pgadmin:
