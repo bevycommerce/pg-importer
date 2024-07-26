@@ -10,9 +10,8 @@ services:
     # ports:
     #   - "5432:5432"
     volumes:
-      - ./data.dump:/docker-entrypoint-initdb.d/data.sql
-    # volumes:
-    #   - ./example.sql:/docker-entrypoint-initdb.d/data.sql
+      - ./example.sql:/docker-entrypoint-initdb.d/data.sql
+      - postgres_data:/var/lib/postgresql/data
 
   pgadmin:
     image: dpage/pgadmin4
@@ -25,3 +24,9 @@ services:
       - "8080:80"
     depends_on:
       - db
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+volumes:
+  postgres_data:
+  pgadmin_data:
