@@ -25,6 +25,7 @@ services:
     depends_on:
       - db
     volumes:
+      - ./servers.json:/pgadmin4/servers.json
       - pgadmin_data:/var/lib/pgadmin
 
 volumes:
