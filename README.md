@@ -6,7 +6,7 @@ Make sure you have a file called `data.dump` in the top directory.
 
 Then run `make up`.
 
-Go to `localhost:8080` and log in with username `admin@admin.com` and password `admin`.
+Go to `localhost:80` and log in with username `admin@admin.com` and password `admin`.
 
 Under `Servers`, open the dropdown and enter the password `admin` for the `Postgres` server, check `Save Password` if desired.
 

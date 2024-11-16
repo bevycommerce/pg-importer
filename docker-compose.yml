@@ -21,7 +21,7 @@ services:
       PGADMIN_CONFIG_ENHANCED_SECURITY: 'False'
       PGADMIN_CONFIG_WTF_CSRF_ENABLED: 'False'
     ports:
-      - "8080:80"
+      - "80:80"
     depends_on:
       - db
     volumes:
