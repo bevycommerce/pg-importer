@@ -11,6 +11,13 @@ wipe:
 reset:
 	docker system prune -a -f && docker volume prune -f
 
+backup:
+	docker exec -e PGPASSWORD=admin pg-importer-db-1 /usr/bin/pg_dump -U admin --clean mydatabase > backup.sql
+
+restore:
+	docker cp backup.sql pg-importer-db-1:/tmp/backup.sql
+	docker exec -e PGPASSWORD=admin pg-importer-db-1 psql -U admin -d mydatabase -f /tmp/backup.sql
+
 dblogs:
 	docker compose logs db
 
